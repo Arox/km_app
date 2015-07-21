@@ -27,9 +27,19 @@ class ResizedImageFieldFile(ImageFieldFile):
         content.file.seek(0)
 
         img = Image.open(content.file)
+        width, height = img.size
+        if width > self.field.max_width or height > self.field.max_height:
+            print (width, height)
+            kofs = (width / self.field.max_width, height / self.field.max_height)
+            print (kofs)
+            max_kof = max(kofs)
+            width /= max_kof
+            height /= max_kof
+            print (width, height)
+
         img.thumbnail((
-            self.field.max_width,
-            self.field.max_height
+            width,
+            height
             ), Image.ANTIALIAS)
         img.save(new_content, format=self.field.format)
 

@@ -42,3 +42,12 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.pyc
+.idea/.name
+clients/views.py
+.idea/workspace.xml
+*.iml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/scopes/scope_settings.xml
+.idea/vcs.xml

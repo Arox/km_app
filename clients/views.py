@@ -5,7 +5,7 @@ from django.views.generic.list import ListView
 from django.core.urlresolvers import reverse_lazy
 from django import forms
 from django.forms.util import ErrorList
-from django.db.models import Q
+from django.db.models import Q, F
 from django.utils.translation import ugettext_lazy as _
 from forms import ClientFindForm
 from models import Client
@@ -140,7 +140,5 @@ class ClientLikes(ListView):
 
     def post(self, request, *args, **kwargs):
         if "like_id" in request.POST:
-            client = Client.objects.get(pk = request.POST['like_id'])
-            client.likes += 1
-            client.save()
+            Client.objects.filter(pk = request.POST['like_id']).update(likes=F('likes')+1)
         return super(ClientLikes, self).get(request, *args, **kwargs)
