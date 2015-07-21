@@ -1,0 +1,74 @@
+#content
+{
+    position: absolute;
+    left: 15%;
+    width: 80%;
+}
+
+.photo img
+{
+width: 200px;
+height: 260px;
+}
+
+.increment img
+{
+height: 20px;
+width: 20px;
+}
+
+.name
+{
+text-align: center;
+}
+
+.sername
+{
+text-align: center;
+}
+
+.photo
+{
+align: center;
+}
+
+.increment
+{
+align: center;
+}
+
+.increment button
+{
+    background: rgba(0,0,0,0);
+    border: 0px;
+}
+
+.count
+{
+text-align:center;
+}
+
+#back
+{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+
+    background: linear-gradient(to top, rgba(222,153,50,0.5), rgba(222,153,50,1.0), rgba(222,153,50,0.6));
+    border-radius: 30px 30px 30px 30px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 10px 10px 10px;
+}
+
+#back a
+{
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    font-size: 1.25em;
+
+}

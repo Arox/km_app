@@ -1,0 +1,68 @@
+#content
+{
+    position: absolute;
+    left: 25%;
+    width: 80%;
+}
+
+#photo
+{
+    width: 200px;
+    height: 260px;
+}
+
+#profile_table
+{
+    width: 500px;
+}
+
+#profile_table td
+{
+    text-align: center;
+}
+
+#profile_table tr:nth-child(2n)
+{
+    background: #c0c0c0;
+}
+
+#profile_table tr:nth-child(2n+1)
+{
+    background: #808080;
+}
+
+#profile_table td
+{
+    font-family: 'Times New Roman';
+    font-size: 150%;
+    height: 30px;
+}
+
+#content_table
+{
+    border-spacing: 10;
+}
+
+#back
+{
+    position: absolute;
+    right: 30%;
+
+    background: linear-gradient(to top, rgba(222,153,50,0.5), rgba(222,153,50,1.0), rgba(222,153,50,0.6));
+    border-radius: 30px 30px 30px 30px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 10px 10px 10px;
+}
+
+#back a
+{
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    font-size: 1.25em;
+
+}

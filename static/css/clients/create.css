@@ -1,0 +1,28 @@
+#create_content
+{
+    position: absolute;
+    top: 15%;
+    left 40%;
+}
+
+
+form
+{
+    padding: 0% 40% 0% 40%;
+    font-family: 'Times New Roman'; /* Гарнитура текста */
+    font-size: 120%; /* Размер шрифта в процентах */
+}
+
+form input
+{
+    height: 30px;
+    font-family: 'Times New Roman'; /* Гарнитура текста */
+    font-size: 100%; /* Размер шрифта в процентах */
+    border-radius: 15px;
+}
+
+#id_photo
+{
+    width: 300px;
+    border-radius: 0px;
+}

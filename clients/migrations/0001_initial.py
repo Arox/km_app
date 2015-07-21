@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models, migrations
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='Client',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('name', models.CharField(max_length=40)),
+                ('sername', models.CharField(max_length=60)),
+                ('birthday', models.DateField()),
+                ('photo', models.FileField(max_length=10, upload_to=b'photos/')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+    ]

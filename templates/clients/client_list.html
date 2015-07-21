@@ -1,0 +1,60 @@
+{% extends "clients/client_general.html" %}
+{% load static from staticfiles %}
+{% load i18n %}
+{% block style %}
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/clients/list.css' %}" />
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/clients/find_form.css' %}" />
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/clients/links.css' %}" />
+{% endblock %}
+
+{% block content %}
+<form action="{% url 'clients:view' %}" method="get">
+    <div id ='finder'>
+            {{ find_form.as_p }}
+            <input type="submit" name = "Find" value="{% trans 'find' %}" id = "submit_find">
+    </div>
+    <div id="report">
+        <a href="{% static 'docs/report.xlsx' %}">{% trans 'report' %}</a>
+    </div>
+    <div id="likes">
+        <a href="{% url 'clients:likes' %}">{% trans 'likes' %}</a>
+    </div>
+    <div id = 'content'>
+        <table>
+            <tr class = 'data_header'>
+                <td class = "column_name">
+                    <button type="submit" name="name"><img class ="icon" src="{% static 'images/site/sort_asc.png' %}"/></button>
+                    {% trans 'name' %}
+                    <button type="submit" name="-name"><img class ="icon" src="{% static 'images/site/sort_desc.png' %}"/></button>
+                </td>
+                <td class = "column_sername">
+                    <button type="submit" name="sername"><img class ="icon" src="{% static 'images/site/sort_asc.png' %}"/></button>
+                    {% trans 'sername' %}
+                    <button type="submit" name="-sername"><img class ="icon" src="{% static 'images/site/sort_desc.png' %}"/></button>
+                </td>
+                <td class = "column_birthday">
+                    <button type="submit" name="birthday"><img class ="icon" src="{% static 'images/site/sort_asc.png' %}"/></button>
+                    {% trans 'birthday' %}
+                    <button type="submit" name="-birthday"><img class ="icon" src="{% static 'images/site/sort_desc.png' %}"/></button>
+                </td>
+                <td class = "column_age">
+                    <button type="submit" name="-birthday"><img class ="icon" src="{% static 'images/site/sort_asc.png' %}"/></button>
+                    {% trans 'age' %}
+                    <button type="submit" name="birthday"><img class ="icon" src="{% static 'images/site/sort_desc.png' %}"/></button>
+                </td>
+            </tr>
+            {% for client in object_list %}
+            <tr>
+                <td class = "column_name"><a href="{% url 'clients:detail' client.pk %}">{{ client.name }}</a></td>
+                <td class = "column_sername"><a href="{% url 'clients:detail' client.pk %}">{{ client.sername }}</a></td>
+                <td class = "column_birthday"><a href="{% url 'clients:detail' client.pk %}">{{ client.birthday }}</a></td>
+                <td class = "column_age"><a href="{% url 'clients:detail' client.pk %}">{{ client.age }}</a></td>
+                <td class = "column_update"><a href="{% url 'clients:update' client.pk %}"> <button type="button" name="update"> <img class ="icon" src="{% static 'images/site/update.png' %}"/></button></a></td>
+                <td class = "column_delete"><a href="{% url 'clients:delete' client.pk %}"> <button type="button" name="dalete"> <img class ="icon" src="{% static 'images/site/delete.png' %}"/></button></a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div id = 'append_client'><a href="{% url 'clients:create' %}"> {% trans 'Add Client' %}</a></div>
+    </div>
+</form>
+{% endblock %}

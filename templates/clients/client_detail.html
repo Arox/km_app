@@ -1,0 +1,29 @@
+{% extends "clients/client_general.html" %}
+{% load static from staticfiles %}
+{% load i18n %}
+{% block style %}
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/clients/detail.css' %}" />
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/clients/links.css' %}" />
+{% endblock %}
+{% block content %}
+    <div id="content">
+        <table id="content_table"><tr><td><img id="photo" src="/media/{{ object.photo }}"/></td>
+        <td>
+        <table id="profile_table">
+            <tr>
+                <td>{% trans 'name' %}</td><td>{{ object.name }}</td>
+            </tr>
+            <tr>
+                <td>{% trans 'sername' %}</td><td>{{ object.sername }}</td>
+            </tr>
+            <tr>
+                <td>{% trans 'bithday' %}</td><td>{{ object.birthday }}</td>
+            </tr>
+            <tr>
+                <td>{% trans 'age' %}</td><td>{{ object.age }}</td>
+            </tr>
+        </table>
+        </td></tr></table>
+        <div id = 'back'><a href="{% url 'clients:view' %}"> {% trans 'back' %}</a></div>
+    </div>
+{% endblock %}

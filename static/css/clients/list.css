@@ -1,0 +1,167 @@
+#content
+{
+    position: absolute;
+    left: 60px;
+    top: 150px;
+    width: 1400px;
+}
+
+#content tr:nth-child(2n)
+{
+    background: #c0c0c0;
+}
+
+#content tr:nth-child(2n+1)
+{
+    background: #808080;
+}
+
+#content tr:nth-child(1)
+{
+    background: #ffffff;
+}
+
+#content td
+{
+    font-family: 'Times New Roman'; /* Гарнитура текста */
+    font-size: 150%; /* Размер шрифта в процентах */
+    height: 30px;
+}
+
+.column_name
+{
+    width: 250px;
+    text-align: right;
+}
+
+.column_sername
+{
+    width: 600px;
+    text-align: right;
+}
+
+.column_birthday
+{
+    width: 300px;
+    text-align: center;
+}
+
+.column_age
+{
+    width: 180px;
+    text-align: center;
+}
+
+.data_header
+{
+    height: 50px;
+}
+
+.data_header
+{
+    vertical-align: top;
+    font-weight: 600;
+}
+
+.data_header button
+{
+    background: rgba(0,0,0,0);
+    border: 0px;
+}
+
+.data_header .column_name
+{
+    text-align: center;
+}
+
+.data_header .column_sername
+{
+    text-align: center;
+}
+
+.data_header .column_birthday
+{
+    text-align: center;
+}
+
+#append_client
+{
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+
+    background: linear-gradient(to top, rgba(3,190,87,0.5), rgba(3,190,87,1.0), rgba(3,190,87,0.6));
+    border-radius: 30px 30px 30px 30px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 10px 10px 10px;
+}
+
+#append_client a
+{
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    font-size: 1.25em;
+
+}
+
+#report
+{
+    position: absolute;
+    right: 100px;
+    top: 50px;
+
+    background: linear-gradient(to top, rgba(222,153,50,0.5), rgba(222,153,50,1.0), rgba(222,153,50,0.6));
+    border-radius: 30px 30px 30px 30px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 10px 10px 10px;
+}
+
+#report a
+{
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    font-size: 1.25em;
+
+}
+
+#likes
+{
+    position: absolute;
+    right: 100px;
+    top: 100px;
+
+    background: linear-gradient(to top, rgba(222,153,50,0.5), rgba(222,153,50,1.0), rgba(222,153,50,0.6));
+    border-radius: 30px 30px 30px 30px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 10px 10px 10px;
+}
+
+#likes a
+{
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    font-size: 1.25em;
+
+}
+
+
+.icon
+{
+    width: 20px;
+    height: 20px;
+}

@@ -1,0 +1,14 @@
+{% extends "clients/client_general.html" %}
+{% load static from staticfiles %}
+{% load i18n %}
+{% block style %}
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/clients/create.css' %}" />
+{% endblock %}
+{% block content %}
+<div id = 'create_content'>
+    <form action="{% url 'clients:create' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p }}
+        <input type="submit" value="{% trans 'create of new client' %}" />
+    </form>
+</div>
+{% endblock %}

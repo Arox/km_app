@@ -1,0 +1,14 @@
+{% extends "clients/client_general.html" %}
+{% load static from staticfiles %}
+{% load i18n %}
+{% block style %}
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/clients/delete.css' %}" />
+{% endblock %}
+{% block content %}
+<div id = 'delete_content'>
+        <form action="{% url 'clients:delete' object.pk %}" method="post">{% csrf_token %}
+            <p>{% trans "Are you sure you want to delete" %} "{{ object }}"?</p>
+            <input type="submit" value="{% trans 'Confirm' %}" />
+        </form>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "clients/client_general.html" %}
+{% load static from staticfiles %}
+{% load i18n %}
+{% block style %}
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/clients/likes.css' %}" />
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/clients/links.css' %}" />
+{% endblock %}
+
+{% block content %}
+    <div id = 'content'>
+        <table>
+            {% for client in object_list %}
+                {% if forloop.counter0|divisibleby:5 %}<tr>{% endif %}
+                <td>
+                    <table>
+                        <tr><td class="name">
+                            {{ client.name }}
+                        </td></tr>
+                        <tr><td class="sername">
+                            {{ client.sername }}
+                        </td></tr>
+                        <tr><td class="photo">
+                            <img src="/media/{{ client.photo }}">
+                        </td></tr>
+                        <tr><td>
+                            <table width = "100%">
+                                <tr>
+                                    <td class = "increment">
+                                        {% if client.likes < 10 %}
+                                            <form action="{% url 'clients:likes' %}" method="post">{% csrf_token %}
+                                                <input type="hidden" name="like_id" value="{{ client.pk }}">
+                                                <button type="submit">
+                                                    <img src="{% static 'images/site/plus.png' %}">
+                                                </button>
+                                            </form>
+                                        {% endif %}</td>
+                                    <td class= "count">{{ client.likes }}</td>
+                                </tr>
+                            </table>
+                        </td></tr>
+                    </table>
+                </td>
+                {% if forloop.counter|divisibleby:5 %}</tr>{% endif %}
+            {% endfor %}
+        </table>
+        <div id = 'back'><a href="{% url 'clients:view' %}"> {% trans 'back' %}</a></div>
+    </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+#finder
+{
+    /*position: absolute;
+    left: 20%;
+    top: 20px;
+    width: 100%;*/
+}
+
+#finder #id_find_text
+{
+    position: absolute;
+    left: 25%;
+    top: 40px;
+    width: 40%;
+    height: 40px;
+
+    font-family: 'Times New Roman'; /* Гарнитура текста */
+    font-size: 150%; /* Размер шрифта в процентах */
+
+    border-radius: 15px 15px 0px 0px;
+}
+
+#finder #submit_find
+{
+    position: absolute;
+    left: 66%;
+    top: 40px;
+    width: 120px;
+    height: 40px;
+
+    border-radius: 15px 15px 15px 15px;
+    font-size: 120%; /* Размер шрифта в процентах */
+}
